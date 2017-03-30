@@ -24,5 +24,17 @@ namespace WhereIStand.View.Controls
         {
             InitializeComponent();
         }
+
+        private void LoginClick(object sender, RoutedEventArgs e)
+        {
+            LoginDialog inputDialog = new LoginDialog();
+            inputDialog.ShowDialog();//dssdsdfs
+
+        }
+
+        private void SignClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

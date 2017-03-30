@@ -9,6 +9,13 @@ namespace WhereIStand.Model
     internal class assignment
     {
         private string m_courseName;
+        private string m_details;
+
+        public string details
+        {
+            get { return m_details; }
+            set { m_details = value; }
+        }
 
         public string CourseName
         {
