@@ -30,7 +30,7 @@ namespace WhereIStand.View.Controls
 
         private void connectClick(object sender, RoutedEventArgs e)
         {
-            wb.Navigate(new Uri("https://moodle2.bgu.ac.il/moodle/login/index.php"));
+            wb.Navigate(new Uri("https://moodle2.bgu.ac.il/moodle/login/index.php"));  // connect
             connectButton.Visibility = Visibility.Hidden;
         }
     }
