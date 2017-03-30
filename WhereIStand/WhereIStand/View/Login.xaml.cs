@@ -21,7 +21,7 @@ namespace WhereIStand.View
     {
         public Login()
         {
-            InitializeComponent();
+            InitializeComponent();//dsdsds
         }
     }
 }
