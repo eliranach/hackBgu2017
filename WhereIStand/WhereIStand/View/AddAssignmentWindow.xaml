@@ -1,0 +1,28 @@
+﻿<Window x:Class="WhereIStand.View.AddAssignmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WhereIStand.View"
+        mc:Ignorable="d"
+        Title="Add Assignment" Height="300" Width="300">
+    <StackPanel>
+        <WrapPanel Orientation="Horizontal" Margin="0 20 0 0" VerticalAlignment="Center">
+            <TextBlock Text="Course Name"  Margin="20 0 0 0" VerticalAlignment="Center"></TextBlock>
+            <TextBox Width="100" Margin="20 0 0 0"></TextBox>
+        </WrapPanel>
+        <WrapPanel Orientation="Horizontal" Margin="0 20 0 0" VerticalAlignment="Center">
+            <TextBlock Text="Date"  Margin="20 0 0 0" VerticalAlignment="Center"></TextBlock>
+            <DatePicker HorizontalAlignment="Center"
+                    Margin="20  0,0,0"
+                    VerticalAlignment="Center"
+                    SelectedDateChanged="DatePicker_SelectedDateChanged"/>
+        </WrapPanel >
+        <WrapPanel Orientation="Horizontal" Margin="0 20 0 0" VerticalAlignment="Center">
+            <TextBlock Text="Assignment Name:"  Margin="20 0 0 0" VerticalAlignment="Center"></TextBlock>
+            <TextBox Width="100" Margin="20 0 0 0"></TextBox>
+        </WrapPanel>
+        <Button Content = "Save" Background="#FF544CFB"   Foreground="White" Style="{StaticResource BaseButtonStyle}" Height = "30" VerticalAlignment="Top"  Click="saveClick" Margin="0 100 0 0 " FontSize="10" HorizontalAlignment="Center" Width="70" />
+    </StackPanel>
+
+</Window>

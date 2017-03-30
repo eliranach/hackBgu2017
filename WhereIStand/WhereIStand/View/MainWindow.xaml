@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WhereIStand"
         xmlns:controls="clr-namespace:WhereIStand.View.Controls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="640" Width="1080">
     <Grid Name="mainG">
         <Grid.RowDefinitions>
         </Grid.RowDefinitions>

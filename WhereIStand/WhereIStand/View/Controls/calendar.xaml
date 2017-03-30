@@ -10,12 +10,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="90*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="70*"></ColumnDefinition>
             <ColumnDefinition Width="30*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Calendar Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedDatesChanged="Calendar_OnSelectedDatesChanged" Grid.ColumnSpan="1" />
+        <Viewbox Grid.Row="1" Grid.RowSpan="2">
+            <Calendar Name="cl" Grid.Row="1" HorizontalAlignment="Center"  VerticalAlignment="Center" SelectedDatesChanged="Calendar_OnSelectedDatesChanged" Grid.ColumnSpan="1"  />
+        </Viewbox>
         <ListBox Name="assignmentsLv" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding VM_AssignmentList}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -23,5 +26,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Grid.Column="1" Grid.Row="2" Click="Button_Click">Add assignment</Button>
+        <Label FontSize="28" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="1" Content="Assignments"></Label>
     </Grid>
 </UserControl>
