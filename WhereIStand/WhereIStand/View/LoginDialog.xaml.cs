@@ -23,5 +23,10 @@ namespace WhereIStand.View
         {
             InitializeComponent();
         }
+
+        private void btnDialogOk_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
