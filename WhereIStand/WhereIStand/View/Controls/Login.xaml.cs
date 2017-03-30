@@ -28,7 +28,7 @@ namespace WhereIStand.View.Controls
         private void LoginClick(object sender, RoutedEventArgs e)
         {
             LoginDialog inputDialog = new LoginDialog();
-            inputDialog.ShowDialog();//
+            inputDialog.ShowDialog();//dssdsdfs
 
         }
 
