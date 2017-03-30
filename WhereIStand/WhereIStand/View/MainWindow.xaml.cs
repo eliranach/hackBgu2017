@@ -33,26 +33,8 @@ namespace WhereIStand
             InitializeComponent();
             vm = new MyViewModel(new Model.MyModel());
             this.DataContext = vm;
-            //Calendar cl = new Calendar();
-            //Grid.SetRow(cl, 0);
-            //Grid.SetColumn(cl, 0);
-            //mainG.Children.Add(cl);
-            Moodle moodle = new Moodle();
-            loginControl = new Login(vm);
-            mainG.Children.Add(loginControl);
-            Thread t = new Thread(waitForConnect);
-            t.Start();
-        }
-
-        public void waitForConnect()
-        {
-            while (!loginControl.UserConnected) ;
-            //user connected
-            this.Dispatcher.Invoke(() =>
-            {
-                loginControl.Visibility = Visibility.Hidden;
-            });
-
+            calendar cal = new calendar(vm);
+            mainG.Children.Add(cal);
         }
     }
 }

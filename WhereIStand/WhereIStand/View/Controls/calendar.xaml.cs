@@ -36,9 +36,6 @@ namespace WhereIStand.View.Controls
         }
 
 
-
-
-
         public calendar(MyViewModel vm)
         {
             InitializeComponent();
@@ -58,27 +55,14 @@ namespace WhereIStand.View.Controls
 
         private void updateTask()
         {
-            List<string> assList = new List<string>();
-            int counter = 1;
-            //convert the assinments to string
-            foreach (assignment ass in currentAss)
-            {
-                assList.Add(counter.ToString());
-                assList.Add(ass.CourseName);
-                assList.Add(ass.assName);
-                listViewTasks.Items.Add(assList);
-                assList.Clear();
-
-            }
 
         }
 
         private void Calendar_OnSelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
-            string[] date = e.AddedItems[0].ToString().Split('/');
-            DateTime dateTime = new DateTime(2017, Int32.Parse(date[0]), Int32.Parse(date[1]));
+            //string[] date = e.AddedItems[0].ToString().Split('/');
+            //DateTime dateTime = new DateTime(2017, Int32.Parse(date[0]), Int32.Parse(date[1]));
             //m_vm.setDayAssinment(dateTime);
-
         }
     }
 }

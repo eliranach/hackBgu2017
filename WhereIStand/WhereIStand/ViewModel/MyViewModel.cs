@@ -41,5 +41,14 @@ namespace WhereIStand.ViewModel
         {
             return model.addUser(username);
         }
+
+        private List<assignment> assignmentList;
+
+        public List<assignment> VM_AssignmentList
+        {
+            get { return model.AssignmentList; }
+            set { assignmentList = value; }
+        }
+
     }
 }

@@ -7,10 +7,18 @@ using HtmlAgilityPack;
 
 namespace WhereIStand.Model
 {
-    internal class Moodle
+    public class Moodle
     {
         private HtmlDocument doc;
-        private string moodleUrl = "https://moodle2.bgu.ac.il/moodle/my/";
+        private List<assignment> assignmentsList = new List<assignment>();
+
+        public List<assignment> AssignmentsList
+        {
+            get { return assignmentsList; }
+            set { assignmentsList = value; }
+        }
+
+        private string moodleUrl = "http://isecal.000webhostapp.com/";
 
         public Moodle()
         {
@@ -18,16 +26,36 @@ namespace WhereIStand.Model
             try
             {
                 doc = web.Load(moodleUrl);
-                getCourses();
+                getAssignments();
             }
             catch (Exception e)
             {
             }
         }
 
-        private void getCourses()
+        private void getAssignments()
         {
-            HtmlNode[] nodes = doc.DocumentNode.ChildNodes[2].ChildNodes[3].ChildNodes[20].ChildNodes[7].ChildNodes[1].ChildNodes[1].ChildNodes[1].ChildNodes[1].ChildNodes[2].ChildNodes[1].ChildNodes[1].ChildNodes.ToArray();
+            HtmlNode[] courses = doc.DocumentNode.SelectNodes("//p").ToArray();
+            foreach (HtmlNode node in courses)
+            {
+                string courseName = node.SelectNodes(".//b")[0].InnerText;
+                string assignmentsStr = node.ChildNodes[2].InnerText;
+                string[] assignments = assignmentsStr.Replace("\r\n", "@").Split('@');
+                foreach (string assign in assignments)
+                {
+                    if (assign.Trim() != "")
+                    {
+                        string[] assfull = assign.Split('-');
+                        string nameAssign = assfull[0].Trim();
+                        string[] date = assfull[1].Trim().Split('.');
+                        DateTime dt = new DateTime(2017, Int32.Parse(date[1]), Int32.Parse(date[0]));
+                        assignment ass = new assignment(courseName, dt, nameAssign);
+                        assignmentsList.Add(ass);
+                    }
+                }
+                Console.WriteLine(courseName);
+
+            }
         }
     }
 }

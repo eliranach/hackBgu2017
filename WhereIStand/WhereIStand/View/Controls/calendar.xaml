@@ -15,16 +15,13 @@
             <ColumnDefinition Width="70*"></ColumnDefinition>
             <ColumnDefinition Width="30*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Calendar Grid.Row="1" HorizontalAlignment="Left" Margin="-65,49,0,0" VerticalAlignment="Top" Height="241" Width="344" SelectedDatesChanged="Calendar_OnSelectedDatesChanged" Grid.ColumnSpan="2" />
-        <ListView x:Name="listViewTasks" Grid.Column="1" HorizontalAlignment="Left" Height="270" Grid.Row="1" VerticalAlignment="Top" Width="90">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="ID" Width="50"/>
-                    <GridViewColumn Header="Course" Width="50"/>
-                    <GridViewColumn Header="Assinment Name" Width="50"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-
+        <Calendar Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedDatesChanged="Calendar_OnSelectedDatesChanged" Grid.ColumnSpan="1" />
+        <ListBox Name="assignmentsLv" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding VM_AssignmentList}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <local:AssignmentControl Assignment="{Binding VM_AssignmentList}"></local:AssignmentControl>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </UserControl>

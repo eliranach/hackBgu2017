@@ -19,8 +19,8 @@ namespace WhereIStand.Model
         private string m_courseName;
         public string CourseName
         {
-            get { return CourseName; }
-            set { CourseName = value; }
+            get { return m_courseName; }
+            set { m_courseName = value; }
         }
 
         private DateTime m_assignmentDate;
