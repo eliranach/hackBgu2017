@@ -23,10 +23,10 @@ namespace WhereIStand
         public MainWindow()
         {
             InitializeComponent();
-            Calendar cl = new Calendar();
-            Grid.SetRow(cl, 0);
-            Grid.SetColumn(cl, 0);
-            mainG.Children.Add(cl);
+            //Calendar cl = new Calendar();
+            //Grid.SetRow(cl, 0);
+            //Grid.SetColumn(cl, 0);
+            //mainG.Children.Add(cl);
         }
     }
 }

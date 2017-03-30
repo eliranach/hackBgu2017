@@ -27,8 +27,11 @@ namespace WhereIStand.View.Controls
 
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            //LoginDialog inputDialog = new LoginDialog();
-            //inputDialog.ShowDialog();//dssdsdfs
+            LoginDialog inputDialog = new LoginDialog();
+            if (inputDialog.ShowDialog() == true)
+            {
+                Console.WriteLine(inputDialog.DialogResult);
+            }
         }
 
         private void SignClick(object sender, RoutedEventArgs e)

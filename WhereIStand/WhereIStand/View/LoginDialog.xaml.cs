@@ -23,5 +23,15 @@ namespace WhereIStand.View
         {
             InitializeComponent();
         }
+
+        private void btnDialogOk_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
+
+        public string Username
+        {
+            get { return username.Text; }
+        }
     }
 }
