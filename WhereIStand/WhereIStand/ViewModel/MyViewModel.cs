@@ -30,5 +30,15 @@ namespace WhereIStand.ViewModel
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
         }
+
+        internal bool connectUser(string username)
+        {
+            return model.connectUser(username);
+        }
+
+        public bool addUser(string username)
+        {
+            return model.addUser(username);
+        }
     }
 }

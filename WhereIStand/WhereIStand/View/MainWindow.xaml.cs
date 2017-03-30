@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,7 @@ namespace WhereIStand
     public partial class MainWindow : Window
     {
         private MyViewModel vm;
+        private Login loginControl;
 
         public MainWindow()
         {
@@ -33,8 +35,20 @@ namespace WhereIStand
             //Grid.SetRow(cl, 0);
             //Grid.SetColumn(cl, 0);
             //mainG.Children.Add(cl);
-            Login loginControl = new Login(vm);
+            loginControl = new Login(vm);
             mainG.Children.Add(loginControl);
+            Thread t = new Thread(waitForConnect);
+            t.Start();
+        }
+
+        public void waitForConnect()
+        {
+            while (!loginControl.UserConnected) ;
+            //user connected
+            this.Dispatcher.Invoke(() =>
+            {
+                loginControl.Visibility = Visibility.Hidden;
+            });
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,7 @@ namespace WhereIStand.View.Controls
     public partial class Login : UserControl
     {
         private MyViewModel vm;
+        private bool userConnected = false;
 
         public Login(MyViewModel vm)
         {
@@ -31,14 +33,26 @@ namespace WhereIStand.View.Controls
 
         private void LoginClick(object sender, RoutedEventArgs e)
         {
-            LoginDialog inputDialog = new LoginDialog();
-            if (inputDialog.ShowDialog() == true)
+            LoginDialog inputDialog = new LoginDialog(vm);
+            inputDialog.Show();
+            Thread t = new Thread(() =>
             {
-            }
+                while (!inputDialog.IsConnected) ;
+                //connected
+                userConnected = true;
+            });
+            t.Start();
         }
 
         private void SignClick(object sender, RoutedEventArgs e)
         {
+            SignInC signIn = new SignInC(vm);
+            signIn.Show();
+        }
+
+        public bool UserConnected
+        {
+            get { return userConnected; }
         }
     }
 }

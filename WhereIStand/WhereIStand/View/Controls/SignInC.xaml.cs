@@ -12,17 +12,36 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WhereIStand.ViewModel;
 
 namespace WhereIStand.View.Controls
 {
     /// <summary>
     /// Interaction logic for SignInC.xaml
     /// </summary>
-    public partial class SignInC : UserControl
+    public partial class SignInC : Window
     {
-        public SignInC()
+        private MyViewModel vm;
+
+        public SignInC(MyViewModel vm)
         {
             InitializeComponent();
+            this.vm = vm;
+        }
+
+        public string Username
+        {
+            get { return userNameTB.Text; }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (vm.addUser(userNameTB.Text))
+                this.Close();
+            else
+            {
+                MessageBox.Show("The user " + userNameTB.Text + " already exist");
+            }
         }
     }
 }
