@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WhereIStand.Model;
 
 namespace WhereIStand
 {
@@ -23,6 +24,7 @@ namespace WhereIStand
         public MainWindow()
         {
             InitializeComponent();
+            //Connector con = new Connector();
         }
     }
 }
