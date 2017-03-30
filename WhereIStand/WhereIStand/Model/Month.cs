@@ -9,15 +9,13 @@ namespace WhereIStand.Model
 {
     internal class Month
     {
-        private Dictionary<string, Day> monthAss;
+        public static Dictionary<string, Day> monthAss = new Dictionary<string, Day>();
 
         public Month()
         {
-            monthAss = new Dictionary<string, Day>();
+
         }
 
-        // public SortedList<> GetAssignmentDay(string day)
-        //{
-        //}
+        
     }
 }

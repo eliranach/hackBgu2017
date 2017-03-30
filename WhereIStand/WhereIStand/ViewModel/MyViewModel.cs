@@ -21,6 +21,7 @@ namespace WhereIStand.ViewModel
             };
         }
 
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void notifyPropertyChanged(string propName)
@@ -29,6 +30,16 @@ namespace WhereIStand.ViewModel
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
+        }
+
+        public void setDayAssinment(DateTime dateTime)
+        {
+            model.setDayAssinment(dateTime);
+        }
+
+        public List<assignment> getAssinment()
+        {
+            return model.GetAssinment();
         }
     }
 }

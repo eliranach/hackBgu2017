@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace WhereIStand.Model
 {
-    internal class assignment
+    public class assignment
     {
-        private string m_courseName;
         private string m_details;
 
         public string details
@@ -17,6 +16,7 @@ namespace WhereIStand.Model
             set { m_details = value; }
         }
 
+        private string m_courseName;
         public string CourseName
         {
             get { return CourseName; }
@@ -45,5 +45,7 @@ namespace WhereIStand.Model
             m_assignmentDate = date;
             m_assName = AssigmentName;
         }
+
+
     }
 }

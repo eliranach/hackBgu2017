@@ -7,7 +7,24 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="90*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Calendar Grid.Row="1" HorizontalAlignment="Left" Margin="-65,49,0,0" VerticalAlignment="Top" Height="241" Width="344" SelectedDatesChanged="Calendar_OnSelectedDatesChanged" Grid.ColumnSpan="2" />
+        <ListView x:Name="listViewTasks" Grid.Column="1" HorizontalAlignment="Left" Height="270" Grid.Row="1" VerticalAlignment="Top" Width="90">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="50"/>
+                    <GridViewColumn Header="Course" Width="50"/>
+                    <GridViewColumn Header="Assinment Name" Width="50"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
-        <Calendar HorizontalAlignment="Left" Margin="9,66,0,0" VerticalAlignment="Top" Height="183" Width="291" SelectedDatesChanged="Calendar_OnSelectedDatesChanged" />
     </Grid>
 </UserControl>
