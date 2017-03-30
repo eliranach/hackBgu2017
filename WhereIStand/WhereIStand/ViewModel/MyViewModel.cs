@@ -32,14 +32,14 @@ namespace WhereIStand.ViewModel
             }
         }
 
-        public void setDayAssinment(DateTime dateTime)
+        internal bool connectUser(string username)
         {
-            model.setDayAssinment(dateTime);
+            return model.connectUser(username);
         }
 
-        public List<assignment> getAssinment()
+        public bool addUser(string username)
         {
-            return model.GetAssinment();
+            return model.addUser(username);
         }
     }
 }

@@ -17,31 +17,21 @@ using WhereIStand.ViewModel;
 namespace WhereIStand.View.Controls
 {
     /// <summary>
-    /// Interaction logic for SignInC.xaml
+    /// Interaction logic for MainPanel.xaml
     /// </summary>
-    public partial class SignInC : Window
+    public partial class MainPanel : UserControl
     {
         private MyViewModel vm;
-
-        public SignInC(MyViewModel vm)
+        public MainPanel(MyViewModel _vm)
         {
+            vm = _vm;
             InitializeComponent();
-            this.vm = vm;
         }
 
-        public string Username
+        private void connectClick(object sender, RoutedEventArgs e)
         {
-            get { return userNameTB.Text; }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (vm.addUser(userNameTB.Text))
-                this.Close();
-            else
-            {
-                MessageBox.Show("The user " + userNameTB.Text + " already exist");
-            }
+            wb.Navigate(new Uri("https://moodle2.bgu.ac.il/moodle/login/index.php"));  // connect
+            connectButton.Visibility = Visibility.Hidden;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,6 +55,26 @@ namespace WhereIStand.Model
         {
             string[] assDate = m_chooseDate.ToString().Split(' ');
             return assDict[assDate[0]];
+        }
+
+        public bool addUser(string username)
+        {
+            if (!Directory.Exists(username))
+            {
+                Directory.CreateDirectory(username);
+                return true;
+            }
+            return false;
+        }
+
+        public bool connectUser(string username)
+        {
+            if (!Directory.Exists(username))
+            {
+                return false;
+            }
+            //take the data
+            return true;
         }
     }
 }

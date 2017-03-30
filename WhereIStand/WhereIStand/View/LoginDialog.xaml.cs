@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WhereIStand.ViewModel;
 
 namespace WhereIStand.View
 {
@@ -19,19 +20,37 @@ namespace WhereIStand.View
     /// </summary>
     public partial class LoginDialog : Window
     {
-        public LoginDialog()
+        private MyViewModel vm;
+        private bool isConnected = false;
+
+        public LoginDialog(MyViewModel vm)
         {
             InitializeComponent();
+            this.vm = vm;
         }
 
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+            //user exist and connected
+            if (vm.connectUser(username.Text))
+            {
+                isConnected = true;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("The user " + username.Text + " does not exist");
+            }
         }
 
         public string Username
         {
             get { return username.Text; }
+        }
+
+        public bool IsConnected
+        {
+            get { return isConnected; }
         }
     }
 }
