@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WhereIStand.Model;
 using WhereIStand.View.Controls;
 using WhereIStand.ViewModel;
 
@@ -35,6 +36,7 @@ namespace WhereIStand
             //Grid.SetRow(cl, 0);
             //Grid.SetColumn(cl, 0);
             //mainG.Children.Add(cl);
+            Moodle moodle = new Moodle();
             loginControl = new Login(vm);
             mainG.Children.Add(loginControl);
             Thread t = new Thread(waitForConnect);
