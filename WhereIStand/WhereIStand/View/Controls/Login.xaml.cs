@@ -30,7 +30,7 @@ namespace WhereIStand.View.Controls
             LoginDialog inputDialog = new LoginDialog();
             if (inputDialog.ShowDialog() == true)
             {
-                Console.WriteLine(inputDialog.DialogResult);
+                Console.WriteLine(inputDialog.username);
             }
         }
 
