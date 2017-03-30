@@ -12,7 +12,7 @@ namespace WhereIStand.Model
 
         public string details
         {
-            get { return m_details; }
+            get { return m_details; }//
             set { m_details = value; }
         }
 
