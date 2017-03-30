@@ -13,20 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WhereIStand
+namespace WhereIStand.View.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for calendar.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class calendar : UserControl
     {
-        public MainWindow()
+        public calendar()
         {
             InitializeComponent();
-            Calendar cl = new Calendar();
-            Grid.SetRow(cl, 0);
-            Grid.SetColumn(cl, 0);
-            mainG.Children.Add(cl);
+        }
+
+        private void Calendar_OnSelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Console.ReadKey();
         }
     }
 }
