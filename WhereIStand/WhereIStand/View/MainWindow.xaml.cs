@@ -51,8 +51,6 @@ namespace WhereIStand
             this.Dispatcher.Invoke(() =>
             {
                 loginControl.Visibility = Visibility.Hidden;
-                MainPanel mp = new MainPanel(vm);
-                mainG.Children.Add(mp);
             });
 
         }
