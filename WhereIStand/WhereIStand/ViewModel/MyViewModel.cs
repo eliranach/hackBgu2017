@@ -8,9 +8,10 @@ using WhereIStand.Model;
 
 namespace WhereIStand.ViewModel
 {
-    class MyViewModel : INotifyPropertyChanged
+    public class MyViewModel : INotifyPropertyChanged
     {
-        MyModel model;
+        private MyModel model;
+
         public MyViewModel(MyModel model)
         {
             this.model = model;
@@ -21,6 +22,7 @@ namespace WhereIStand.ViewModel
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         public void notifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)

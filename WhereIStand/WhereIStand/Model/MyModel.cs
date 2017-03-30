@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace WhereIStand.Model
 {
-    class MyModel : INotifyPropertyChanged
+    public class MyModel : INotifyPropertyChanged
     {
         public MyModel()
         {
-
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
         public void notifyPropertyChanged(string propName)
         {
             if (this.PropertyChanged != null)

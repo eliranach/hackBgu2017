@@ -12,33 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WhereIStand.ViewModel;
 
 namespace WhereIStand.View.Controls
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for SignInC.xaml
     /// </summary>
-    public partial class Login : UserControl
+    public partial class SignInC : UserControl
     {
-        private MyViewModel vm;
-
-        public Login(MyViewModel vm)
+        public SignInC()
         {
             InitializeComponent();
-            this.vm = vm;
-        }
-
-        private void LoginClick(object sender, RoutedEventArgs e)
-        {
-            LoginDialog inputDialog = new LoginDialog();
-            if (inputDialog.ShowDialog() == true)
-            {
-            }
-        }
-
-        private void SignClick(object sender, RoutedEventArgs e)
-        {
         }
     }
 }

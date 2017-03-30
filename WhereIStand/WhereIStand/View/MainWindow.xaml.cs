@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WhereIStand.View.Controls;
+using WhereIStand.ViewModel;
 
 namespace WhereIStand
 {
@@ -20,13 +22,19 @@ namespace WhereIStand
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MyViewModel vm;
+
         public MainWindow()
         {
             InitializeComponent();
+            vm = new MyViewModel(new Model.MyModel());
+            this.DataContext = vm;
             //Calendar cl = new Calendar();
             //Grid.SetRow(cl, 0);
             //Grid.SetColumn(cl, 0);
             //mainG.Children.Add(cl);
+            Login loginControl = new Login(vm);
+            mainG.Children.Add(loginControl);
         }
     }
 }

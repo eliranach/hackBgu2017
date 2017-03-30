@@ -12,6 +12,5 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
-        <controls:Login></controls:Login>
     </Grid>
 </Window>
