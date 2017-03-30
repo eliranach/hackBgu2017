@@ -10,31 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WhereIStand.View.Controls
+namespace WhereIStand.View
 {
     /// <summary>
-    /// Interaction logic for Login.xaml
+    /// Interaction logic for LoginDialog.xaml
     /// </summary>
-    public partial class Login : UserControl
+    public partial class LoginDialog : Window
     {
-        public Login()
+        public LoginDialog()
         {
             InitializeComponent();
-        }
-
-        private void LoginClick(object sender, RoutedEventArgs e)
-        {
-            LoginDialog inputDialog = new LoginDialog();
-            inputDialog.ShowDialog();
-
-        }
-
-        private void SignClick(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
