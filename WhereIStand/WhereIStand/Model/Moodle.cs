@@ -27,6 +27,7 @@ namespace WhereIStand.Model
 
         private void getCourses()
         {
+            HtmlNode[] nodes = doc.DocumentNode.ChildNodes[2].ChildNodes[3].ChildNodes[20].ChildNodes[7].ChildNodes[1].ChildNodes[1].ChildNodes[1].ChildNodes[1].ChildNodes[2].ChildNodes[1].ChildNodes[1].ChildNodes.ToArray();
         }
     }
 }

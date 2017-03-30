@@ -49,7 +49,7 @@ namespace WhereIStand.View.Controls
             {
                 if (e.PropertyName == "VM_chooseDate")
                 {
-                    currentAss = m_vm.getAssinment();
+                    //currentAss = m_vm.getAssinment();
                     updateTask();
                     Console.ReadKey();
                 }
@@ -77,7 +77,7 @@ namespace WhereIStand.View.Controls
         {
             string[] date = e.AddedItems[0].ToString().Split('/');
             DateTime dateTime = new DateTime(2017, Int32.Parse(date[0]), Int32.Parse(date[1]));
-            m_vm.setDayAssinment(dateTime);
+            //m_vm.setDayAssinment(dateTime);
 
         }
     }
