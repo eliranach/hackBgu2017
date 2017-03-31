@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -12,9 +13,9 @@ namespace WhereIStand.Model
     {
         private DateTime m_chooseDate;
         private Moodle moodle;
-        private List<assignment> assignmentList;
+        private ObservableCollection<assignment> assignmentList;
 
-        public List<assignment> AssignmentList
+        public ObservableCollection<assignment> AssignmentList
         {
             get { return moodle.AssignmentsList; }
             set { assignmentList = value; }

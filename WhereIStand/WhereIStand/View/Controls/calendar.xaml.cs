@@ -19,16 +19,15 @@ using WhereIStand.ViewModel;
 
 namespace WhereIStand.View.Controls
 {
-
     /// <summary>
     /// Interaction logic for calendar.xaml
     /// </summary>
     public partial class calendar : UserControl
     {
-        MyViewModel m_vm;
+        private MyViewModel m_vm;
         private string VM_chooseDate;
-        string m_selectedDate;
-        List<assignment> currentAss;
+        private string m_selectedDate;
+        private List<assignment> currentAss;
         private readonly CalenderBackground background;
 
         public string ChooseDate
@@ -36,7 +35,6 @@ namespace WhereIStand.View.Controls
             get { return VM_chooseDate; }
             set { VM_chooseDate = value; }
         }
-
 
         public calendar(MyViewModel vm)
         {
@@ -76,7 +74,6 @@ namespace WhereIStand.View.Controls
 
         private void updateTask()
         {
-
         }
 
         private void KalenderOnDisplayDateChanged(object sender, CalendarDateChangedEventArgs calendarDateChangedEventArgs)
@@ -93,8 +90,26 @@ namespace WhereIStand.View.Controls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddAssignmentWindow assignmentW = new AddAssignmentWindow();
+            AddAssignmentWindow assignmentW = new AddAssignmentWindow(m_vm);
             assignmentW.Show();
+        }
+
+        private void MenuItem_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (assignmentsLv.SelectedIndex == -1)
+            {
+                return;
+            }
+            int index = assignmentsLv.SelectedIndex;
+            assignmentsLv.UnselectAll();
+            m_vm.VM_AssignmentList.RemoveAt(index);
+            //foreach (assignment ass in m_vm.VM_AssignmentList)
+            //{
+            //    if (ass.assName.Equals(submit.assName))
+            //    {
+            //        background.AddDate(ass.assignmentDate, "Tjek.png");
+            //    }
+            //}
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,6 @@ namespace WhereIStand.ViewModel
             };
         }
 
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void notifyPropertyChanged(string propName)
@@ -42,13 +42,12 @@ namespace WhereIStand.ViewModel
             return model.addUser(username);
         }
 
-        private List<assignment> assignmentList;
+        private ObservableCollection<assignment> assignmentList;
 
-        public List<assignment> VM_AssignmentList
+        public ObservableCollection<assignment> VM_AssignmentList
         {
             get { return model.AssignmentList; }
             set { assignmentList = value; }
         }
-
     }
 }

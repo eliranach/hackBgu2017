@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +11,9 @@ namespace WhereIStand.Model
     public class Moodle
     {
         private HtmlDocument doc;
-        private List<assignment> assignmentsList = new List<assignment>();
+        private ObservableCollection<assignment> assignmentsList = new ObservableCollection<assignment>();
 
-        public List<assignment> AssignmentsList
+        public ObservableCollection<assignment> AssignmentsList
         {
             get { return assignmentsList; }
             set { assignmentsList = value; }
@@ -54,7 +55,6 @@ namespace WhereIStand.Model
                     }
                 }
                 Console.WriteLine(courseName);
-
             }
         }
     }

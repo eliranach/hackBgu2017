@@ -9,20 +9,19 @@
     <StackPanel>
         <WrapPanel Orientation="Horizontal" Margin="0 20 0 0" VerticalAlignment="Center">
             <TextBlock Text="Course Name"  Margin="20 0 0 0" VerticalAlignment="Center"></TextBlock>
-            <TextBox Width="100" Margin="20 0 0 0"></TextBox>
+            <TextBox Width="100" Margin="20 0 0 0" Name="courseNameTb"></TextBox>
         </WrapPanel>
         <WrapPanel Orientation="Horizontal" Margin="0 20 0 0" VerticalAlignment="Center">
             <TextBlock Text="Date"  Margin="20 0 0 0" VerticalAlignment="Center"></TextBlock>
             <DatePicker HorizontalAlignment="Center"
                     Margin="20  0,0,0"
                     VerticalAlignment="Center"
-                    SelectedDateChanged="DatePicker_SelectedDateChanged"/>
-        </WrapPanel >
+                    SelectedDateChanged="DatePicker_SelectedDateChanged" Name="datePicker" />
+        </WrapPanel>
         <WrapPanel Orientation="Horizontal" Margin="0 20 0 0" VerticalAlignment="Center">
             <TextBlock Text="Assignment Name:"  Margin="20 0 0 0" VerticalAlignment="Center"></TextBlock>
-            <TextBox Width="100" Margin="20 0 0 0"></TextBox>
+            <TextBox Width="100" Margin="20 0 0 0" Name="assNameTb"></TextBox>
         </WrapPanel>
         <Button Content = "Save" Background="#FF544CFB"   Foreground="White" Style="{StaticResource BaseButtonStyle}" Height = "30" VerticalAlignment="Top"  Click="saveClick" Margin="0 100 0 0 " FontSize="10" HorizontalAlignment="Center" Width="70" />
     </StackPanel>
-
 </Window>

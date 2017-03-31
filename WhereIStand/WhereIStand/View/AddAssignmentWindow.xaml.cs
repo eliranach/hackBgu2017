@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WhereIStand.Model;
+using WhereIStand.ViewModel;
 
 namespace WhereIStand.View
 {
@@ -19,19 +21,23 @@ namespace WhereIStand.View
     /// </summary>
     public partial class AddAssignmentWindow : Window
     {
-        public AddAssignmentWindow()
+        private MyViewModel vm;
+
+        public AddAssignmentWindow(MyViewModel vm)
         {
             InitializeComponent();
+            this.vm = vm;
         }
 
         private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-
         }
 
         private void saveClick(object sender, RoutedEventArgs e)
         {
-
+            assignment ass = new assignment(courseNameTb.Text, datePicker.SelectedDate.Value.Date, assNameTb.Text);
+            vm.VM_AssignmentList.Add(ass);
+            this.Close();
         }
     }
 }

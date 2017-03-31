@@ -24,6 +24,13 @@ namespace WhereIStand.View.Controls
         public AssignmentControl()
         {
             InitializeComponent();
+            colorDates();
+        }
+
+        private void colorDates()
+        {
+            TimeSpan difference = DateTime.Now.Date - Assignment.assignmentDate;
+            int daysLeft = (int)difference.TotalDays;
         }
 
         public static readonly DependencyProperty AssignmentProperty =
@@ -34,6 +41,5 @@ namespace WhereIStand.View.Controls
             get { return (assignment)GetValue(AssignmentProperty); }
             set { SetValue(AssignmentProperty, value); }
         }
-
     }
 }
